@@ -9,9 +9,9 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    let member = message.mentions.members.first();
-    message.channel.send(`Hello ${member.displayName}!`);
-
+    if (message.content.startsWith(`${prefix}greet`) || !message.author.bot) {
+        let member = message.mentions.members.first();
+        message.channel.send(`Hello ${member.displayName}!`);
+    }
 });
 client.login(process.env.token);
