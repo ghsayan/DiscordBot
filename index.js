@@ -19,7 +19,7 @@ client.on('message', message => {
             .setColor('#0099ff')
             .setTitle(`Angel bullies ${member.displayName}`)
             .setImage('https://media.giphy.com/media/jxETRYAi2KReel7pqy/giphy.gif')
-        channel.send(exampleEmbed);
+        message.channel.send(exampleEmbed);
     }
 });
 client.login(process.env.token);
