@@ -5,7 +5,7 @@ const {
 const client = new Discord.Client();
 
 client.once('ready', () => {
-    console.log('Ready!');
+    console.log('Bot Online!');
 })
 
 client.on('message', message => {
