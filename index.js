@@ -35,7 +35,8 @@ client.on('message', message => {
     if (message.content.startsWith(`${prefix}pls`) && !message.author.bot) {
         const args = message.content.slice(4).split(' ');
         const command = args.shift().toLowerCase();
-
+        console.log(command);
+        
         giphy.search('gifs',{"q":command})
             .then((response) =>{
                 var totalResponses=response.data.length;
