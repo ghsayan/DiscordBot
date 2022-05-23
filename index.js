@@ -18,6 +18,13 @@ client.on('guildMemberAdd', member => {
     channel.send(`Welcome to the server, ${member}`);
   });
 
+//set custom nickname on join
+client.on('guildMemberAdd', (member) => {
+ if (member.user.username.startsWith('D')) {
+  member.setNickname('Dogi Kumari');
+ }
+});
+
 //commands
 client.on('message', message => {
     if (message.content.startsWith(`${prefix}greet`) && !message.author.bot) {
