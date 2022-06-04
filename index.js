@@ -27,7 +27,7 @@ client.on('guildMemberAdd', (member) => {
 
 //commands
 client.on('message', message => {
-    if (message.content.startsWith(`${prefix}greet`) && !message.author.bot) {
+    if (message.content.startsWith(`${prefix}wish`) && !message.author.bot) {
         let member = message.mentions.members.first();
         message.channel.send(`Hello ${member.displayName}!`);
     }
