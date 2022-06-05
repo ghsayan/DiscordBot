@@ -21,10 +21,18 @@ client.on('guildMemberAdd', member => {
 //set custom nickname on join
 client.on('guildMemberAdd', (member) => {
  if (member.user.username.startsWith('D')) {
-     console.log('User with D');
      member.setNickname("Dogi Kumari");
  }
-    console.log("Working");
+    const channel = member.guild.channels.cache.find(channel => channel.name === "general")
+    if (!channel) return;
+
+    const joinembed = new Discord.MessageEmbed()
+    .setTitle(`A new clown just landed!`)
+    .setDescription(`Welcome ${member} to the circus!`)
+    .setColor("#FF0000")
+    .setImage('https://media.giphy.com/media/3owypbsgMMOTylOzOo/giphy.gif')
+    
+    channel.send(joinembed)
 });
 
 //commands
