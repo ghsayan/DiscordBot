@@ -22,6 +22,7 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberAdd', (member) => {
  if (member.user.username.startsWith('D')) {
   member.setNickname('Dogi Kumari');
+  console.log(`User ${member.displayName} joined`);
  }
 });
 
